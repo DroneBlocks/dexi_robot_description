@@ -7,6 +7,9 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
+        - /RobotModel1/Links1
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 469
   - Class: rviz_common/Selection
@@ -61,7 +64,7 @@ Visualization Manager:
         Value: /robot_description
       Enabled: true
       Links:
-        All Links Enabled: true
+        All Links Enabled: false
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -71,6 +74,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: false
+        bottom_plate_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -111,6 +119,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         rotor_4_propeller_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        top_plate_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -127,27 +140,31 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         base_footprint:
           Value: true
         base_link:
-          Value: true
+          Value: false
+        bottom_plate_link:
+          Value: false
         rotor_1_link:
-          Value: true
+          Value: false
         rotor_1_propeller_link:
-          Value: true
+          Value: false
         rotor_2_link:
-          Value: true
+          Value: false
         rotor_2_propeller_link:
-          Value: true
+          Value: false
         rotor_3_link:
-          Value: true
+          Value: false
         rotor_3_propeller_link:
-          Value: true
+          Value: false
         rotor_4_link:
-          Value: true
+          Value: false
         rotor_4_propeller_link:
-          Value: true
+          Value: false
+        top_plate_link:
+          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -168,6 +185,10 @@ Visualization Manager:
             rotor_4_link:
               rotor_4_propeller_link:
                 {}
+          bottom_plate_link:
+            {}
+          top_plate_link:
+            {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -216,7 +237,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.2933698892593384
+      Distance: 1.0585440397262573
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -231,10 +252,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.785398006439209
+      Pitch: 0.884797215461731
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.785398006439209
+      Yaw: 2.530397653579712
     Saved: ~
 Window Geometry:
   Displays:
