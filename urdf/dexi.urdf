@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<robot name="dexi">
+
+    <link name="base_footprint" />
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.2 0.2 0.025" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+    </link>
+
+    <link name="bottom_plate_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://dexi_robot_description/meshes/dexi_bottom_plate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 -1.57" />
+        </visual>
+    </link>
+
+    <link name="top_plate_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://dexi_robot_description/meshes/dexi_top_plate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 -1.57" />
+        </visual>
+    </link>
+
+    <link name="rotor_1_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.02" radius="0.01" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+    </link>
+
+    <link name="rotor_1_propeller_link">
+        <visual>
+            <geometry>
+                <!-- Propeller 5.5" long, 1" width and 1/4" high-->
+                <box size="0.140 0.025 .006" />
+            </geometry>
+            <!-- 45 degree rotation -->
+            <origin xyz="0 0 0" rpy="0 0 0.785" />
+        </visual>
+    </link>
+
+    <link name="rotor_2_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.02" radius="0.01" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+    </link>
+
+    <link name="rotor_2_propeller_link">
+        <visual>
+            <geometry>
+                <!-- Propeller 5.5" long, 1" width and 1/4" high-->
+                <box size="0.140 0.025 .006" />
+            </geometry>
+            <!-- 45 degree rotation -->
+            <origin xyz="0 0 0" rpy="0 0 0.785" />
+        </visual>
+    </link>
+
+    <link name="rotor_3_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.02" radius="0.01" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+    </link>
+
+    <link name="rotor_3_propeller_link">
+        <visual>
+            <geometry>
+                <!-- Propeller 5.5" long, 1" width and 1/4" high-->
+                <box size="0.140 0.025 .006" />
+            </geometry>
+            <!-- 45 degree rotation -->
+            <origin xyz="0 0 0" rpy="0 0 -0.785" />
+        </visual>
+    </link>
+
+    <link name="rotor_4_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.02" radius="0.01" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+    </link>
+
+    <link name="rotor_4_propeller_link">
+        <visual>
+            <geometry>
+                <!-- Propeller 5.5" long, 1" width and 1/4" high-->
+                <box size="0.140 0.025 .006" />
+            </geometry>
+            <!-- 45 degree rotation -->
+            <origin xyz="0 0 0" rpy="0 0 -0.785" />
+        </visual>
+    </link>
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="bottom_plate_joint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="bottom_plate_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="top_plate_joint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="top_plate_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <!-- Front Right Rotor -->
+    <joint name="base_rotor_1_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="rotor_1_link" />
+        <origin xyz="0.1 -0.1 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <!-- Front Right Propeller -->
+    <joint name="rotor_1_propeller_link" type="fixed">
+        <parent link="rotor_1_link" />
+        <child link="rotor_1_propeller_link" />
+        <origin xyz="0 0 0.013" rpy="0 0 0.01" />
+    </joint>
+
+    <!-- Rear Left -->
+    <joint name="base_rotor_2_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="rotor_2_link" />
+        <origin xyz="-0.1 0.1 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <!-- Rear Left Propeller -->
+    <joint name="rotor_2_propeller_link" type="fixed">
+        <parent link="rotor_2_link" />
+        <child link="rotor_2_propeller_link" />
+        <origin xyz="0 0 0.013" rpy="0 0 0.01" />
+    </joint>
+
+    <!-- Front Left -->
+    <joint name="base_rotor_3_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="rotor_3_link" />
+        <origin xyz="0.1 0.1 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <!-- Front Left Propeller -->
+    <joint name="rotor_3_propeller_link" type="fixed">
+        <parent link="rotor_3_link" />
+        <child link="rotor_3_propeller_link" />
+        <origin xyz="0 0 0.013" rpy="0 0 0.01" />
+    </joint>
+
+    <!-- Front Right -->
+    <joint name="base_rotor_4_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="rotor_4_link" />
+        <origin xyz="-0.1 -0.1 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <!-- Rear Right Propeller -->
+    <joint name="rotor_4_propeller_link" type="fixed">
+        <parent link="rotor_4_link" />
+        <child link="rotor_4_propeller_link" />
+        <origin xyz="0 0 0.013" rpy="0 0 0.01" />
+    </joint>
+
+</robot>
