@@ -43,10 +43,9 @@
         <visual>
             <geometry>
                 <!-- Propeller 5.5" long, 1" width and 1/4" high-->
-                <box size="0.140 0.025 .006" />
+                <mesh filename="package://dexi_robot_description/meshes/gemfan_ccw.stl" scale="0.001 0.001 0.001" />
             </geometry>
-            <!-- 45 degree rotation -->
-            <origin xyz="0 0 0" rpy="0 0 0.785" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
         </visual>
     </link>
 
@@ -83,10 +82,10 @@
         <visual>
             <geometry>
                 <!-- Propeller 5.5" long, 1" width and 1/4" high-->
-                <box size="0.140 0.025 .006" />
+                <mesh filename="package://dexi_robot_description/meshes/gemfan_cw.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <!-- 45 degree rotation -->
-            <origin xyz="0 0 0" rpy="0 0 -0.785" />
+            <origin xyz="0 0 0" rpy="-1.57 0 0" />
         </visual>
     </link>
 
@@ -137,10 +136,10 @@
     </joint>
 
     <!-- Front Right Propeller -->
-    <joint name="rotor_1_propeller_link" type="fixed">
+    <joint name="rotor_1_propeller_joint" type="fixed">
         <parent link="rotor_1_link" />
         <child link="rotor_1_propeller_link" />
-        <origin xyz="0 0 0.013" rpy="0 0 0.01" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
     <!-- Rear Left -->
@@ -152,7 +151,7 @@
     </joint>
 
     <!-- Rear Left Propeller -->
-    <joint name="rotor_2_propeller_link" type="fixed">
+    <joint name="rotor_2_propeller_joint" type="fixed">
         <parent link="rotor_2_link" />
         <child link="rotor_2_propeller_link" />
         <origin xyz="0 0 0.013" rpy="0 0 0.01" />
@@ -167,7 +166,7 @@
     </joint>
 
     <!-- Front Left Propeller -->
-    <joint name="rotor_3_propeller_link" type="fixed">
+    <joint name="rotor_3_propeller_joint" type="fixed">
         <parent link="rotor_3_link" />
         <child link="rotor_3_propeller_link" />
         <origin xyz="0 0 0.013" rpy="0 0 0.01" />
@@ -182,7 +181,7 @@
     </joint>
 
     <!-- Rear Right Propeller -->
-    <joint name="rotor_4_propeller_link" type="fixed">
+    <joint name="rotor_4_propeller_joint" type="fixed">
         <parent link="rotor_4_link" />
         <child link="rotor_4_propeller_link" />
         <origin xyz="0 0 0.013" rpy="0 0 0.01" />
