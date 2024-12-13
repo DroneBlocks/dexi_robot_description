@@ -6,7 +6,7 @@
     <link name="base_link">
         <visual>
             <geometry>
-                <box size="0.2 0.2 0.025" />
+                <box size="0 0 0" />
             </geometry>
             <origin xyz="0 0 0" rpy="0 0 0" />
         </visual>
@@ -130,7 +130,7 @@
     <joint name="base_rotor_1_joint" type="continuous">
         <parent link="base_link" />
         <child link="rotor_1_link" />
-        <origin xyz="0.075 -0.095 0" rpy="0 0 0" />
+        <origin xyz="0.075 -0.095 0.025" rpy="0 0 0" />
         <axis xyz="0 0 1" />
     </joint>
 
@@ -138,14 +138,14 @@
     <joint name="rotor_1_propeller_joint" type="fixed">
         <parent link="rotor_1_link" />
         <child link="rotor_1_propeller_link" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 -0.01" rpy="0 0 0" />
     </joint>
 
     <!-- Rear Left -->
     <joint name="base_rotor_2_joint" type="continuous">
         <parent link="base_link" />
         <child link="rotor_2_link" />
-        <origin xyz="-0.075 0.095 0" rpy="0 0 0" />
+        <origin xyz="-0.075 0.095 0.025" rpy="0 0 0" />
         <axis xyz="0 0 1" />
     </joint>
 
@@ -153,14 +153,14 @@
     <joint name="rotor_2_propeller_joint" type="fixed">
         <parent link="rotor_2_link" />
         <child link="rotor_2_propeller_link" />
-        <origin xyz="0 0 0.013" rpy="0 0 0.01" />
+        <origin xyz="0 0 -0.01" rpy="0 0 0.01" />
     </joint>
 
     <!-- Front Left -->
     <joint name="base_rotor_3_joint" type="continuous">
         <parent link="base_link" />
         <child link="rotor_3_link" />
-        <origin xyz="0.075 0.095 0" rpy="0 0 0" />
+        <origin xyz="0.075 0.095 0.025" rpy="0 0 0" />
         <axis xyz="0 0 1" />
     </joint>
 
@@ -168,14 +168,14 @@
     <joint name="rotor_3_propeller_joint" type="fixed">
         <parent link="rotor_3_link" />
         <child link="rotor_3_propeller_link" />
-        <origin xyz="0 0 0.013" rpy="0 0 0.01" />
+        <origin xyz="0 0 -0.01" rpy="0 0 0.01" />
     </joint>
 
     <!-- Front Right -->
     <joint name="base_rotor_4_joint" type="continuous">
         <parent link="base_link" />
         <child link="rotor_4_link" />
-        <origin xyz="-0.075 -0.095 0" rpy="0 0 0" />
+        <origin xyz="-0.075 -0.095 0.025" rpy="0 0 0" />
         <axis xyz="0 0 1" />
     </joint>
 
@@ -183,7 +183,7 @@
     <joint name="rotor_4_propeller_joint" type="fixed">
         <parent link="rotor_4_link" />
         <child link="rotor_4_propeller_link" />
-        <origin xyz="0 0 0.013" rpy="0 0 0.01" />
+        <origin xyz="0 0 -0.01" rpy="0 0 0.01" />
     </joint>
 
 </robot>
