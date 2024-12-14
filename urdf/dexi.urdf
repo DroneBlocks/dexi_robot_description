@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <robot name="dexi">
 
+    <material name="black">
+        <color rgba="0 0 0 1" />
+    </material>
+
     <link name="base_footprint" />
 
     <link name="base_link">
@@ -30,7 +34,17 @@
         </visual>
     </link>
 
-    <link name="rotor_1_link">
+    <link name="rotor_1_motor_base_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.01" radius="0.015" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+    </link>
+
+    <link name="rotor_1_motor_shaft_link">
         <visual>
             <geometry>
                 <cylinder length="0.02" radius="0.01" />
@@ -108,6 +122,58 @@
         </visual>
     </link>
 
+    <link name="standoffs_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0.149925 -0.095 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0.121427 -0.153807 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0.06 -0.168408 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0 -0.165 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="-0.06 -0.168408 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="-0.121427 -0.153807 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+    </link>
+
+
     <joint name="base_joint" type="fixed">
         <parent link="base_footprint" />
         <child link="base_link" />
@@ -126,19 +192,27 @@
         <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
-    <!-- Front Right Rotor -->
-    <joint name="base_rotor_1_joint" type="continuous">
-        <parent link="base_link" />
-        <child link="rotor_1_link" />
-        <origin xyz="0.075 -0.095 0.025" rpy="0 0 0" />
+    <!-- Front Right Motor Base -->
+    <joint name="base_rotor_1_joint" type="fixed">
+        <parent link="top_plate_link" />
+        <child link="rotor_1_motor_base_link" />
+        <origin xyz="0.075 -0.095 0.03" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <!-- Front Right Motor Shaft -->
+    <joint name="base_rotor_1_motor_shaft_joint" type="continuous">
+        <parent link="rotor_1_motor_base_link" />
+        <child link="rotor_1_motor_shaft_link" />
+        <origin xyz="0 0 -0.015" rpy="0 0 0" />
         <axis xyz="0 0 1" />
     </joint>
 
     <!-- Front Right Propeller -->
     <joint name="rotor_1_propeller_joint" type="fixed">
-        <parent link="rotor_1_link" />
+        <parent link="rotor_1_motor_shaft_link" />
         <child link="rotor_1_propeller_link" />
-        <origin xyz="0 0 -0.01" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
     <!-- Rear Left -->
@@ -184,6 +258,13 @@
         <parent link="rotor_4_link" />
         <child link="rotor_4_propeller_link" />
         <origin xyz="0 0 -0.01" rpy="0 0 0.01" />
+    </joint>
+
+    <!-- Standoff #1 -->
+    <joint name="standoffs_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="standoffs_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
 </robot>
