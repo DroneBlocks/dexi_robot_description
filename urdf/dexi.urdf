@@ -122,7 +122,18 @@
         </visual>
     </link>
 
+    <!-- DEXI standoffs starting with right half -->
+
     <link name="standoffs_link">
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0.125 -0.035 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
         <visual>
             <geometry>
                 <cylinder length="0.035" radius="0.003" />
@@ -168,6 +179,96 @@
                 <cylinder length="0.035" radius="0.003" />
             </geometry>
             <origin xyz="-0.121427 -0.153807 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="-0.149925 -0.095 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="-0.125 -0.035 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <!-- Begin left half of frame standoffs -->
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="-0.125 0.035 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="-0.149925 0.095 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="-0.121427 0.153807 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="-0.06 0.168408 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0 0.165 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0.06 0.168408 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0.121427 0.153807 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0.149925 0.095 0.0175" rpy="0 0 0" />
+            <material name="black" />
+        </visual>
+
+        <visual>
+            <geometry>
+                <cylinder length="0.035" radius="0.003" />
+            </geometry>
+            <origin xyz="0.125 0.035 0.0175" rpy="0 0 0" />
             <material name="black" />
         </visual>
 
